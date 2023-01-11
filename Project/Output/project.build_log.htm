@@ -1,0 +1,99 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 Microsoft, Microsoft, LIC=03C6R-KIDXE-2Z1W4-FI5SL-E8BHU-R7F4D
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.37.0.0
+Toolchain Path:  E:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMP1.DLL V1.28.1.0
+Target DLL:      Segger\JL2CM3.dll V2.99.42.0
+Dialog DLL:      TARMP1.DLL V1.27.1.0
+ 
+<h2>Project:</h2>
+F:\5520-fat16-200210\Project\project.uvprojx
+Project File Date:  11/04/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Open1788'
+compiling EX_SDRAM.c...
+compiling main.c...
+compiling timer.c...
+compiling lpc177x_8x_lcd.c...
+compiling logo.c...
+compiling TouchPanel.c...
+compiling use_disp.c...
+compiling key.c...
+compiling test.c...
+compiling GlobalValue.c...
+compiling system_LPC177x_8x.c...
+compiling core_cm3.c...
+compiling lpc177x_8x_gpio.c...
+compiling lpc177x_8x_systick.c...
+compiling lpc177x_8x_clkpwr.c...
+compiling lpc177x_8x_ssp.c...
+compiling lpc177x_8x_uart.c...
+compiling debug_frmwrk.c...
+..\Libraries\Drivers\source\debug_frmwrk.c(473): warning:  #223-D: function "vsprintf" declared implicitly
+      vsprintf((char *)buffer, (char const *)format, vArgs);
+..\Libraries\Drivers\source\debug_frmwrk.c: 1 warning, 0 errors
+compiling lpc177x_8x_pinsel.c...
+compiling lpc177x_8x_eeprom.c...
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(109): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint8_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(119): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint16_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(129): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint32_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(198): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint8_t *)data)++) = (uint8_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(208): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint16_t *)data)++) = (uint16_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(217): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint32_t *)data)++) = (uint32_t)(LPC_EEPROM ->RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c: 6 warnings, 0 errors
+compiling lpc177x_8x_rtc.c...
+compiling usbhost_fat.c...
+compiling usbhost_lpc17xx.c...
+compiling usbhost_ms.c...
+linking...
+Program Size: Code=60000 RO-data=427052 RW-data=288 ZI-data=18752  
+FromELF: creating hex file...
+".\Output\project.axf" - 0 Error(s), 7 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.LPC1700_DFP.2.7.1.pack
+                Keil.LPC1700_DFP.2.7.1
+                NXP LPC1700 Series Device Support, Drivers and Examples for MCB1700 and LPC1788-32
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Open1788
+  D:/Keil_v5/ARM/PACK/ARM/CMSIS/5.8.0/CMSIS/Core/Include
+  D:/Keil_v5/ARM/PACK/Keil/LPC1700_DFP/2.7.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+Build Time Elapsed:  00:00:15
+</pre>
+</body>
+</html>
