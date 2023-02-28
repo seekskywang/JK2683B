@@ -360,7 +360,7 @@ const uint8_t User_Range[][10+1]=
     {"2MΩ   "},
 	{"20MΩ  "},
 	{"200MΩ "},
-	{"2000MΩ"},
+	{"10000MΩ"},
 
 };
 const  uint8_t Auto_RangeDisp[][12+1]=
@@ -368,7 +368,7 @@ const  uint8_t Auto_RangeDisp[][12+1]=
 	{"AUTO_2M   "},
 	{"AUTO_20M  "},
 	{"AUTO_200M "},
-	{"AUTO_2000M"},
+	{"AUTO_10000M"},
 
 };
 const  uint8_t Hand_RangeDisp[][12+1]=
@@ -376,7 +376,7 @@ const  uint8_t Hand_RangeDisp[][12+1]=
 	{"HAND_2M   "},
 	{"HAND_20M  "},
 	{"HAND_200M "},
-	{"HAND_2000M"},
+	{"HAND_10000M"},
 
 };
 const uint8_t RangeButton_Tip[][7+1]=  //频率选择时候的下面的提示符号
@@ -734,8 +734,8 @@ const uint8_t	Set_testitem_E[][9+1]=
 };
 const uint8_t Sys_Sys[][2][20+1]=
 {
-	{{"仪器型号  "},{"Model:  "}},
-	{{"软件版本  Ver:1.01"},{"Sort Ver:1.11"}},//0  表示LPC更新  1STM32更新
+	{{"仪器型号  JK2683B"},{"Model:  JK2683B"}},
+	{{"软件版本  Ver:1.02"},{"Sort Ver:1.02"}},//0  表示LPC更新  1STM32更新
 	{{"硬件版本  Ver:1.01"},{"Harn Ver:1.01"}},
 //	{"生产日期  "},
 //	{"仪器编号  "},
@@ -754,6 +754,7 @@ const uint8_t Sys_Setitem[][2][10+1]=
 	{{"U盘开关 :"},{"USB Disk :"}},
 	{{"I/O口   :"},{"I/O Port:"}},
 	{{"显示语言:"},{"Language:"}},
+	{{"通讯地址:"},{"CommAddr :"}},
 	
 //	{"日期    "},
 //	{"时间    "},
@@ -2974,7 +2975,8 @@ void Disp_Sys_value(Button_Page_Typedef* Button_Page)
 	{
 		Colour.black=LCD_COLOR_TEST_BACK;
 	}
-		
+	
+//IO口	
 	LCD_DrawRect( LIST1+100, FIRSTLINE+SPACE1*2,SELECT_1END , FIRSTLINE+SPACE1*3-4 , Colour.black ) ;//SPACE1
 	WriteString_16(LIST1+100, FIRSTLINE+SPACE1*2+2, Test_Compvalue[Tft_5520.Sys_Set.U_Switch][Tft_5520.Sys_Set.Lang],  0);
 
@@ -3007,6 +3009,22 @@ void Disp_Sys_value(Button_Page_Typedef* Button_Page)
 		
 	LCD_DrawRect( LIST1+100, FIRSTLINE+SPACE1*4,SELECT_1END , FIRSTLINE+SPACE1*5 -4, Colour.black ) ;//SPACE1
 	WriteString_16(LIST1+100, FIRSTLINE+SPACE1*4+2, Sys_Language_Value[Tft_5520.Sys_Set.Lang],  0);
+
+//通讯地址
+	Black_Select=(Button_Page->index==6)?1:0;
+	if(Black_Select)
+	{
+		Colour.black=LCD_COLOR_SELECT;
+	
+	}
+	else
+	{
+		Colour.black=LCD_COLOR_TEST_BACK;
+	}
+		
+	LCD_DrawRect( LIST1+100, FIRSTLINE+SPACE1*5,SELECT_1END , FIRSTLINE+SPACE1*6 -4, Colour.black ) ;//SPACE1
+	Hex_Format(Tft_5520.Sys_Set.Addr,0,3,0);
+	WriteString_16(LIST1+100, FIRSTLINE+SPACE1*5+2, DispBuf,  0);
 	
     LCD_DrawRect( 0, 271-18, 479, 271 , LCD_COLOR_TEST_BAR);
     Colour.Fword=White;
@@ -3090,11 +3108,7 @@ void Disp_Sys_value(Button_Page_Typedef* Button_Page)
 		case 6:
 //			Colour.Fword=White;
 //			Colour.black=LCD_COLOR_TEST_BUTON;
-			for(i=0;i<2;i++)
-			{
-				
-				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE+12, BiasButton_Tip[i],  0);
-			}
+			WriteString_16(BUTTOM_X_VALUE, BUTTOM_Y_VALUE+13, "1-255",  0);
 			break;
 		case 7:
 			Colour.Fword=White;
@@ -4528,13 +4542,13 @@ const  vu8 Sys_Data_Comp[][2]=
 	{0,1},
 	{0,1},
 	{0,2},
-	{1,12},
+	{1,255},
 	{1,31},
 	{1,24},
 	{0,59},
 	{0,59}
 
-
+	
 };
 //设置数据的上下限判定
 void SetData_High_Low_Comp(void)

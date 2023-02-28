@@ -123,8 +123,11 @@ extern Com_TypeDef ComBuf3;
 #define UART_REC_BEGIN 			(0xAB)//AA
 #define UART_REC_END 			(0xAF)//AF
 
+#define UART_REC_BEGIN_PC 			(0xAA)//AA
+#define UART_REC_END_PC 			(0xBF)//AF
+
 //帧类型定义
-#define FRAME_READ_RESULT		(0x43)	//读取结果
+#define FRAME_READ_RESULT		(0xfc)	//读取结果
 #define FRAME_START				(0xfa)	//启动
 #define FRAME_RESET				(0xfb)	//复位
 #define FRAME_DATA				(0xF1)	//数据帧

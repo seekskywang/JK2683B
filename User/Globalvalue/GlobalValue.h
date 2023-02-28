@@ -88,7 +88,7 @@
 #define NUM_FREQ 			(33+4)//显示长度
 #define DEBUG_RANGE			(4+1)
 #define SET_MAX             (11)
-#define SYS_MAX				(5)
+#define SYS_MAX				(6)
 #define GROUP_MAX           (5)
 
 #define USBSENDLENTH        (27)
@@ -137,6 +137,21 @@ typedef struct
 
 }Send_Testvalue_Typedef;
 extern Send_Testvalue_Typedef Send_Testvalue[2];
+
+typedef struct 
+{
+    char start;//帧头
+    char addr;//通讯地址
+    char voltage[5];//5字节电压ASCII
+    char risistence[6];//6字节电阻ASCII，最后一个字节为单位
+		char current[6];//6字节电流ASCII，最后一个字节为单位
+    char time[4];//4字节时间，单位0.1s
+    u8 comp;//分选结果
+    char end;//帧尾
+
+}SendPC_Testvalue_Typedef;
+extern SendPC_Testvalue_Typedef SendPC_Testvalue;
+
 typedef struct 
 {
     uint8_t    Range;
@@ -184,7 +199,7 @@ typedef struct
     uint8_t U_Switch;
     uint8_t I_O;
     uint8_t Lang;
-
+		uint8_t Addr;
 }Sys_Set_Typedef;
 typedef struct 
 {

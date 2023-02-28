@@ -646,10 +646,10 @@ void Finsh_Process(void)
 		
 	
 		if(Tft_5520.Sys_Set.Uart&&(Uart3_returnflag==1))//串口打开，往上位机发送数据
-        {
-            Uart3_returnflag=0;
-            Uart3_Send();
-        }
+		{
+				Uart3_returnflag=0;
+				Uart3_Send();
+		}
 		Colour.black=LCD_COLOR_TEST_MID;
 		
 
@@ -749,7 +749,38 @@ void Finsh_Process(void)
     All_LedOff1();
 
 }
-
+//将数据转换为发送给上位机的格式
+void DataConvertSendToPC(void)
+{
+	u8 i;
+	SendPC_Testvalue.start = UART_SEND_BEGIN;
+	SendPC_Testvalue.end = UART_SEND_END;
+	SendPC_Testvalue.addr = Tft_5520.Sys_Set.Addr;
+	SendPC_Testvalue.voltage[0]='0';
+	memcpy(&SendPC_Testvalue.voltage[1],(char *)Send_Testvalue[0].dianya,4);
+	memcpy(&SendPC_Testvalue.risistence[1],(char *)Send_Testvalue[0].dianzu,5);
+	for(i=0;i<5;i++)
+	{
+		if(SendPC_Testvalue.risistence[i] == 0x5e)//开路
+		{
+			SendPC_Testvalue.risistence[i] = 0xd0;
+		}else if(SendPC_Testvalue.risistence[i] == 0x56 || Tft_5520_Dispvalue.comp == 0x94){//短路
+			SendPC_Testvalue.risistence[i] = 0xb0;
+		}
+	}
+	memcpy(&SendPC_Testvalue.time[0],(char *)Send_Testvalue[0].time,3);
+	SendPC_Testvalue.time[3] = Send_Testvalue[0].time[4];
+	SendPC_Testvalue.risistence[5] = 0x4d;//电阻单位固定为MΩ
+	SendPC_Testvalue.current[5] = 0x75;//电流单位固定为uA
+	for(i=0;i<5;i++)
+	{
+		if(SendPC_Testvalue.current[i] == 0x2d)//开路
+			SendPC_Testvalue.current[i] = 0xb0;
+	}
+	SendPC_Testvalue.comp = Send_Testvalue[0].comp;
+	if(SendPC_Testvalue.comp > 0x91)
+		SendPC_Testvalue.comp = 0x92;
+}
 
 //测试程序
 void Test_Process(void)
@@ -1008,7 +1039,9 @@ void Test_Process(void)
 					DispBuf[i]='-';
 			
 			}
-            WriteString_Big(90+40,92+53 ,DispBuf);
+			memcpy(&SendPC_Testvalue.current[0],&DispBuf,5);
+			DataConvertSendToPC();
+      WriteString_Big(90+40,92+53 ,DispBuf);
             
              for(i=0;i<7;i++)
             DispBuf[i]=0;
@@ -2602,7 +2635,7 @@ void Soft_Turnon(void)
 //系统设置
 void Use_SysSetProcess(void)
 {
-	
+	vu16 *pt;
 	vu32 keynum=0;
 	vu8 key;
 	vu8 Disp_flag=1;
@@ -2665,10 +2698,23 @@ void Use_SysSetProcess(void)
                             break;
                         case 5:
                             Tft_5520.Sys_Set.Lang=Tft_5520.Sys_Set.Lang>0? 0:1;
-							lcd_Clear(LCD_COLOR_TEST_BACK);
-							Disp_Sys_Item(2);
+														lcd_Clear(LCD_COLOR_TEST_BACK);
+														Disp_Sys_Item(2);
                             break;
-                    
+												case 6:
+                            LcdAddr.x=LIST1+100;
+                            LcdAddr.y=FIRSTLINE+SPACE1*5+2;
+                            Colour.black=LCD_COLOR_SELECT;
+                            
+														pt=(vu16* )&Tft_5520.Sys_Set.Addr;
+														NumBox.Num=*pt;
+														NumBox.Max=255;//Max
+														NumBox.Min=1;//Min
+                            NumBox.Dot=0;
+                            Number_Setup(&NumBox);//数值框设置
+                
+                            *pt=NumBox.Num;//更新设置值
+                            break;
                     
                     
                     }
@@ -2698,10 +2744,23 @@ void Use_SysSetProcess(void)
                             break;
                         case 5:
                             Tft_5520.Sys_Set.Lang=Tft_5520.Sys_Set.Lang>0? 0:1;
-							lcd_Clear(LCD_COLOR_TEST_BACK);
-							Disp_Sys_Item(2);
+														lcd_Clear(LCD_COLOR_TEST_BACK);
+														Disp_Sys_Item(2);
                             break;
-                    
+												case 6:
+                            LcdAddr.x=LIST1+100;
+                            LcdAddr.y=FIRSTLINE+SPACE1*5+2;
+                            Colour.black=LCD_COLOR_SELECT;
+                            
+														pt=(vu16* )&Tft_5520.Sys_Set.Addr;
+														NumBox.Num=*pt;
+														NumBox.Max=255;//Max
+														NumBox.Min=1;//Min
+                            NumBox.Dot=0;
+                            Number_Setup(&NumBox);//数值框设置
+                
+                            *pt=NumBox.Num;//更新设置值
+                            break;
                     
                     
                     }

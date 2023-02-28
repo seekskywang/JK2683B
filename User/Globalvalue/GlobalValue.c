@@ -25,6 +25,7 @@ Saveeeprom_Typedef	Saveeeprom;
 Test_Dispvalue_TypeDef Test_Dispvalue; 
 Tft_5520_Disp_Typedef Tft_5520_Dispvalue;
 Send_Testvalue_Typedef Send_Testvalue[2];
+SendPC_Testvalue_Typedef SendPC_Testvalue;
 Send_Mainord_Typedef Send_Mainord;
 Comp_Testvalue_Typedef  Comp_Testvalue;
 All_Compvalue_Typedef Comp_Change;

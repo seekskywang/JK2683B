@@ -28,6 +28,7 @@
 #include "stdarg.h"
 #include "GlobalValue.h"
 #include <assert.h>
+#include <string.h>
 Com_TypeDef ComBuf;
 Com_TypeDef ComBuf3;
 //extern Send_Testvalue_Typedef Send_Testvalue[2];
@@ -646,6 +647,8 @@ void Uart0RecTimeOut(void)
 	}
 }
 
+
+
 //==========================================================
 //函数名称：Uart_Process
 //函数功能：串口处理
@@ -701,6 +704,7 @@ vu8 Uart_Process(void)
                         
             
                 }
+
 
 			}
             
@@ -832,7 +836,7 @@ void UART3_IRQHandler(void)
     {
         SetRecTimeOut(REC_TIME_OUT);//设置接收超时周期
         dat=Status;
-        if (dat==(vu8)(UART_REC_BEGIN))//帧头
+        if (dat==(vu8)(UART_REC_BEGIN_PC))//帧头
         {
             if(ComBuf3.rec.ptr!=0) //首字节
             {
@@ -843,7 +847,7 @@ void UART3_IRQHandler(void)
                 ComBuf3.rec.buf[ComBuf3.rec.ptr++]=dat;
             }
         }
-        else if (dat==(vu8)(UART_REC_END))//帧尾
+        else if (dat==(vu8)(UART_REC_END_PC))//帧尾
         {
             ComBuf3.rec.buf[ComBuf3.rec.ptr++]=dat;
             ComBuf3.rec.end=TRUE;//接收结束
@@ -870,8 +874,8 @@ void Uart3_Send(void)
 {
     vu8 *pt;
     vu8 i;
-    pt=(vu8 *)&Send_Testvalue[0];
-    for(i=0;i<(sizeof(Send_Testvalue[0]));i++)
+    pt=(vu8 *)&SendPC_Testvalue;
+    for(i=0;i<(sizeof(SendPC_Testvalue));i++)
     {
     UARTPutChar(LPC_UART3,*(pt+i) );
         //Delay(2);
@@ -880,6 +884,9 @@ void Uart3_Send(void)
 
 
 }
+
+
+
 vu8 Uart3_Process(void)
 {
 
@@ -895,25 +902,25 @@ vu8 Uart3_Process(void)
 		if (ComBuf3.rec.end)//接收数据结束
 		{data=1;
 			//memset(str,'\0',(FRAME_LEN_MAX-FRAME_LEN_MIN+1));//清空缓冲
-			{
+			if(ComBuf3.rec.buf[1] == Tft_5520.Sys_Set.Addr){//判断通讯地址是否匹配
 				//memcpy(str,&ComBuf.rec.buf[PDATASTART-1],ComBuf.send.len-FRAME_LEN_MIN);//数据包
-				kind=ComBuf3.rec.buf[PFRAMEKIND];//命令字
+				kind=ComBuf3.rec.buf[2];//命令字
                // ppt=(vu8 *)&ComBuf.rec.buf;
 //                pt=(Send_Testvalue_Typedef *)&ComBuf3.rec.buf;
                 switch(kind)
                 {
-                    case 0xfa:
+                    case FRAME_START:
                         if(GetSystemStatus()!=SYS_STATUS_TEST)
                             SetSystemStatus(SYS_STATUS_TEST);
                         break;
-                    case 0xfb:
+                    case FRAME_RESET:
                        if(GetSystemStatus()==SYS_STATUS_TEST)
                             SetSystemStatus(SYS_STATUS_ABORT);
                        else
                            SetSystemStatus(SYS_STATUS_IDEM);
                            
                         break;
-                    case 0x43://测试数据
+                    case FRAME_READ_RESULT://测试数据
                         Uart3_returnflag=1;
 //                        pt=&Send_Testvalue[0];
 //                        if(Tft_5520.Sys_Set.Uart)//串口打开，往上位机发送数据

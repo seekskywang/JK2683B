@@ -81,8 +81,8 @@ void Pass_Led(void)
     GPIO_SetValue(2, (1<<26));
 	GPIO_ClearValue(1, (1<<0));
     
-    GPIO_SetValue(2, (1<<11));
-	GPIO_ClearValue(0, (1<<11));
+    GPIO_ClearValue(2, (1<<11));
+	GPIO_SetValue(0, (1<<11));
     
     
 
@@ -116,8 +116,8 @@ void Fail_led(void)
     GPIO_SetValue(1, (1<<0));
 	GPIO_ClearValue(2, (1<<26));
 
-    GPIO_SetValue(0, (1<<11));//
-	GPIO_ClearValue(2, (1<<11));
+    GPIO_ClearValue(0, (1<<11));//
+	GPIO_SetValue(2, (1<<11));
     
 }
 void Power_On_led(void)
