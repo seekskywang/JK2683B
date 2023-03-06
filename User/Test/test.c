@@ -755,10 +755,30 @@ void DataConvertSendToPC(void)
 	u8 i;
 	SendPC_Testvalue.start = UART_SEND_BEGIN;
 	SendPC_Testvalue.end = UART_SEND_END;
-	SendPC_Testvalue.addr = Tft_5520.Sys_Set.Addr;
-	SendPC_Testvalue.voltage[0]='0';
-	memcpy(&SendPC_Testvalue.voltage[1],(char *)Send_Testvalue[0].dianya,4);
-	memcpy(&SendPC_Testvalue.risistence[1],(char *)Send_Testvalue[0].dianzu,5);
+//	SendPC_Testvalue.addr = Tft_5520.Sys_Set.Addr;
+	if(Tft_5520.Set_Value[Tft_5520.Group].voltage < 100)
+	{
+		SendPC_Testvalue.voltage[0] = Tft_5520.Set_Value[Tft_5520.Group].voltage/10+0x30;
+		SendPC_Testvalue.voltage[1] = Tft_5520.Set_Value[Tft_5520.Group].voltage%10+0x30;
+		SendPC_Testvalue.voltage[2] = '.';
+		SendPC_Testvalue.voltage[3] = '0';
+		SendPC_Testvalue.voltage[4] = '0';
+	}else{
+		if(Tft_5520.Set_Value[Tft_5520.Group].voltage < 1000)
+		{
+			SendPC_Testvalue.voltage[0] = Tft_5520.Set_Value[Tft_5520.Group].voltage/100+0x30;
+			SendPC_Testvalue.voltage[1] = Tft_5520.Set_Value[Tft_5520.Group].voltage%100+0x30;
+			SendPC_Testvalue.voltage[2] = Tft_5520.Set_Value[Tft_5520.Group].voltage%10+0x30;
+			SendPC_Testvalue.voltage[3] = '.';
+			SendPC_Testvalue.voltage[4] = '0';
+		}else{			
+			memcpy(&SendPC_Testvalue.voltage[0],(char *)Send_Testvalue[0].dianya,4);
+			SendPC_Testvalue.voltage[4]=0;
+		}
+	}
+//	SendPC_Testvalue.voltage[0]='0';
+//	memcpy(&SendPC_Testvalue.voltage[1],(char *)Send_Testvalue[0].dianya,4);
+	memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
 	for(i=0;i<5;i++)
 	{
 		if(SendPC_Testvalue.risistence[i] == 0x5e)//¿ªÂ·
