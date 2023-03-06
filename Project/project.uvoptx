@@ -119,6 +119,11 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+          <Name>猬Nw滮?滮???</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>ARMRTXEVENTFLAGS</Key>
           <Name>-L70 -Z18 -C0 -M0 -T1</Name>
         </SetRegEntry>
@@ -199,6 +204,16 @@
           <count>9</count>
           <WinNumber>1</WinNumber>
           <ItemText>Send_Testvalue</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Res</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>\\project\../User/Globalvalue/GlobalValue.c\SendPC_Testvalue.risistence[2]</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
