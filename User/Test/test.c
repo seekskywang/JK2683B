@@ -756,7 +756,7 @@ void DataConvertSendToPC(void)
 	SendPC_Testvalue.start = UART_SEND_BEGIN;
 	SendPC_Testvalue.end = UART_SEND_END;
 	SendPC_Testvalue.addr = Tft_5520.Sys_Set.Addr;
-	SendPC_Testvalue.voltage[0]='0';
+	SendPC_Testvalue.voltage[0]=0X20;
 	memcpy(&SendPC_Testvalue.voltage[1],(char *)Send_Testvalue[0].dianya,4);
 	memcpy(&SendPC_Testvalue.risistence[1],(char *)Send_Testvalue[0].dianzu,5);
 	for(i=0;i<5;i++)
