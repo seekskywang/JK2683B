@@ -781,7 +781,7 @@ void DataConvertSendToPC(void)
 //	memcpy(&SendPC_Testvalue.voltage[1],(char *)Send_Testvalue[0].dianya,4);
 	if(risitvalue >= 100 && risitvalue < 1000)
 	{
-		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],3);
+		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],3);
 		SendPC_Testvalue.risistence[3] = '.';
 		SendPC_Testvalue.risistence[4] = '0';
 	}else if(risitvalue >= 10 && risitvalue < 100){
