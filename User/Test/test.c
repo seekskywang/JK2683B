@@ -768,34 +768,53 @@ void DataConvertSendToPC(void)
 		if(Tft_5520.Set_Value[Tft_5520.Group].voltage < 1000)
 		{
 			SendPC_Testvalue.voltage[0] = Tft_5520.Set_Value[Tft_5520.Group].voltage/100+0x30;
-			SendPC_Testvalue.voltage[1] = Tft_5520.Set_Value[Tft_5520.Group].voltage%100+0x30;
+			SendPC_Testvalue.voltage[1] = Tft_5520.Set_Value[Tft_5520.Group].voltage%100/10+0x30;
 			SendPC_Testvalue.voltage[2] = Tft_5520.Set_Value[Tft_5520.Group].voltage%10+0x30;
 			SendPC_Testvalue.voltage[3] = '.';
 			SendPC_Testvalue.voltage[4] = '0';
 		}else{			
-			memcpy(&SendPC_Testvalue.voltage[0],(char *)Send_Testvalue[0].dianya,4);
+			memcpy(&SendPC_Testvalue.voltage[0],"1000",4);
 			SendPC_Testvalue.voltage[4]=0;
 		}
 	}
 //	SendPC_Testvalue.voltage[0]='0';
 //	memcpy(&SendPC_Testvalue.voltage[1],(char *)Send_Testvalue[0].dianya,4);
-	if(risitvalue >= 100 && risitvalue < 1000)
+	if(Tft_5520_Dispvalue.Range == 0)
 	{
-		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],3);
-		SendPC_Testvalue.risistence[3] = '.';
-		SendPC_Testvalue.risistence[4] = '0';
-	}else if(risitvalue >= 10 && risitvalue < 100){
+		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
+	}else if(Tft_5520_Dispvalue.Range == 1){
 		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],4);
 		SendPC_Testvalue.risistence[4] = '0';
-	}else if(risitvalue >= 1 && risitvalue < 10){
-		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],4);
-		SendPC_Testvalue.risistence[4] = '0';
-	}else if(risitvalue >= 1000){
+	}else if(Tft_5520_Dispvalue.Range == 2){
 		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
-		SendPC_Testvalue.risistence[4] = '.';
-	}else{
-		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
+	}else if(Tft_5520_Dispvalue.Range == 3){
+		if(risitvalue < 1000)
+		{
+			memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],3);
+			SendPC_Testvalue.risistence[3] = '.';
+			SendPC_Testvalue.risistence[4] = '0';
+		}else{
+			memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],4);
+			SendPC_Testvalue.risistence[4] = '.';
+		}
 	}
+//	if(risitvalue >= 100 && risitvalue < 1000)
+//	{
+//		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],3);
+//		SendPC_Testvalue.risistence[3] = '.';
+//		SendPC_Testvalue.risistence[4] = '0';
+//	}else if(risitvalue >= 10 && risitvalue < 100){
+//		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],4);
+//		SendPC_Testvalue.risistence[4] = '0';
+//	}else if(risitvalue >= 1 && risitvalue < 10){
+//		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],4);
+//		SendPC_Testvalue.risistence[4] = '0';
+//	}else if(risitvalue >= 1000){
+//		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
+//		SendPC_Testvalue.risistence[4] = '.';
+//	}else{
+//		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
+//	}
 	for(i=0;i<5;i++)
 	{
 		if(SendPC_Testvalue.risistence[i] == 0x5e)//¿ªÂ·

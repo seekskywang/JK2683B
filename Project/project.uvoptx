@@ -120,7 +120,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>猬瀢?????鎅</Name>
+          <Name>猬瀢腆?腆??+Y</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -212,6 +212,11 @@
         </Ww>
         <Ww>
           <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>\\project\../User/Globalvalue/GlobalValue.c\SendPC_Testvalue.risistence[2]</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
           <WinNumber>1</WinNumber>
           <ItemText>\\project\../User/Globalvalue/GlobalValue.c\SendPC_Testvalue.risistence[2]</ItemText>
         </Ww>
@@ -635,7 +640,7 @@
 
   <Group>
     <GroupName>MassStorage</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

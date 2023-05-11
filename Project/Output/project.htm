@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Output\project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Output\project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Apr 21 12:41:05 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Apr 21 14:52:41 2023
 <BR><P>
 <H3>Maximum Stack Usage =        532 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2190,13 +2190,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[153]"></a>DataConvertSendToPC</STRONG> (Thumb, 302 bytes, Stack size 20 bytes, test.o(.text))
+<P><STRONG><a name="[153]"></a>DataConvertSendToPC</STRONG> (Thumb, 296 bytes, Stack size 20 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = DataConvertSendToPC
 </UL>
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
 
-<P><STRONG><a name="[81]"></a>Test_Process</STRONG> (Thumb, 1124 bytes, Stack size 72 bytes, test.o(.text))
+<P><STRONG><a name="[81]"></a>Test_Process</STRONG> (Thumb, 1126 bytes, Stack size 72 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 532 + Unknown Stack Size
 <LI>Call Chain = Test_Process &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
