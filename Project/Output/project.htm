@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Output\project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Output\project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Apr 21 14:52:41 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Fri Jul 14 10:05:11 2023
 <BR><P>
-<H3>Maximum Stack Usage =        532 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        520 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; Test_Process &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 <P>
@@ -151,21 +151,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[49]"></a>_printf_f</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_f.o(.ARM.Collect$$_printf_percent$$00000003))
-<BR><BR>[Stack]<UL><LI>Max Depth = 324 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 320 + Unknown Stack Size
 <LI>Call Chain = _printf_f &rArr; _printf_fp_dec &rArr; _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec
 </UL>
 
 <P><STRONG><a name="[4b]"></a>_printf_e</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_e.o(.ARM.Collect$$_printf_percent$$00000004))
-<BR><BR>[Stack]<UL><LI>Max Depth = 324 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 320 + Unknown Stack Size
 <LI>Call Chain = _printf_e &rArr; _printf_fp_dec &rArr; _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec
 </UL>
 
 <P><STRONG><a name="[4c]"></a>_printf_g</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_g.o(.ARM.Collect$$_printf_percent$$00000005))
-<BR><BR>[Stack]<UL><LI>Max Depth = 324 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 320 + Unknown Stack Size
 <LI>Call Chain = _printf_g &rArr; _printf_fp_dec &rArr; _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec
@@ -380,7 +380,7 @@ Global Symbols
 <P><STRONG><a name="[271]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[6e]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 532 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 520 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Test_Process &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -625,7 +625,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6f]"></a>main</STRONG> (Thumb, 150 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 532 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 520 + Unknown Stack Size
 <LI>Call Chain = main &rArr; Test_Process &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Use_SysSetProcess
@@ -2197,7 +2197,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[81]"></a>Test_Process</STRONG> (Thumb, 1126 bytes, Stack size 72 bytes, test.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 532 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 520 + Unknown Stack Size
 <LI>Call Chain = Test_Process &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_Key
@@ -3032,7 +3032,7 @@ Global Symbols
 
 <P><STRONG><a name="[294]"></a>Uart0RecTimeOut</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, debug_frmwrk.o(.text), UNUSED)
 
-<P><STRONG><a name="[14c]"></a>Uart_Process</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, debug_frmwrk.o(.text))
+<P><STRONG><a name="[14c]"></a>Uart_Process</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, debug_frmwrk.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Uart_Process
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
@@ -3765,7 +3765,7 @@ Global Symbols
 <P><STRONG><a name="[2a0]"></a>__lib_sel_fp_printf</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, _printf_fp_dec.o(.text), UNUSED)
 
 <P><STRONG><a name="[1fa]"></a>_printf_fp_dec_real</STRONG> (Thumb, 620 bytes, Stack size 104 bytes, _printf_fp_dec.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 324<LI>Call Chain = _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
@@ -3877,7 +3877,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[203]"></a>__strtod_int</STRONG> (Thumb, 90 bytes, Stack size 40 bytes, strtod.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 436<LI>Call Chain = __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_local_sscanf
 </UL>
@@ -3992,8 +3992,8 @@ Global Symbols
 <P><STRONG><a name="[3d]"></a>_sbackspace</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, _sgetc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> strtod.o(.text)
 </UL>
-<P><STRONG><a name="[1f5]"></a>_btod_etento</STRONG> (Thumb, 224 bytes, Stack size 72 bytes, bigflt0.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = _btod_etento &rArr; _btod_emul &rArr; _e2e
+<P><STRONG><a name="[1f5]"></a>_btod_etento</STRONG> (Thumb, 216 bytes, Stack size 72 bytes, bigflt0.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
 <LI><a href="#[1f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
@@ -4037,8 +4037,8 @@ Global Symbols
 <LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isspace
 </UL>
 
-<P><STRONG><a name="[20c]"></a>_scanf_really_real</STRONG> (Thumb, 684 bytes, Stack size 120 bytes, scanf_fp.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 340<LI>Call Chain = _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<P><STRONG><a name="[20c]"></a>_scanf_really_real</STRONG> (Thumb, 668 bytes, Stack size 120 bytes, scanf_fp.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
 <LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_narrow
@@ -4118,8 +4118,8 @@ Global Symbols
 <LI><a href="#[1f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
 </UL>
 
-<P><STRONG><a name="[217]"></a>_e2d</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, btod.o(CL$$btod_e2d))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = _e2d &rArr; _e2e
+<P><STRONG><a name="[217]"></a>_e2d</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, btod.o(CL$$btod_e2d))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = _e2d &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2e
 </UL>
@@ -4127,7 +4127,7 @@ Global Symbols
 <LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_edivd
 </UL>
 
-<P><STRONG><a name="[218]"></a>_e2e</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, btod.o(CL$$btod_e2e))
+<P><STRONG><a name="[218]"></a>_e2e</STRONG> (Thumb, 198 bytes, Stack size 24 bytes, btod.o(CL$$btod_e2e))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = _e2e
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
@@ -4135,8 +4135,8 @@ Global Symbols
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2d
 </UL>
 
-<P><STRONG><a name="[1f7]"></a>_btod_ediv</STRONG> (Thumb, 42 bytes, Stack size 28 bytes, btod.o(CL$$btod_ediv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = _btod_ediv &rArr; _e2e
+<P><STRONG><a name="[1f7]"></a>_btod_ediv</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, btod.o(CL$$btod_ediv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = _btod_ediv &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2e
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__btod_div_common
@@ -4145,8 +4145,8 @@ Global Symbols
 <LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
-<P><STRONG><a name="[20b]"></a>_btod_edivd</STRONG> (Thumb, 42 bytes, Stack size 28 bytes, btod.o(CL$$btod_edivd))
-<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = _btod_edivd &rArr; _e2d &rArr; _e2e
+<P><STRONG><a name="[20b]"></a>_btod_edivd</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, btod.o(CL$$btod_edivd))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = _btod_edivd &rArr; _e2d &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2d
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__btod_div_common
@@ -4154,8 +4154,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
 </UL>
 
-<P><STRONG><a name="[1f8]"></a>_btod_emul</STRONG> (Thumb, 42 bytes, Stack size 28 bytes, btod.o(CL$$btod_emul))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = _btod_emul &rArr; _e2e
+<P><STRONG><a name="[1f8]"></a>_btod_emul</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, btod.o(CL$$btod_emul))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__btod_mult_common
 <LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2e
@@ -4164,8 +4164,8 @@ Global Symbols
 <LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
-<P><STRONG><a name="[20a]"></a>_btod_emuld</STRONG> (Thumb, 42 bytes, Stack size 28 bytes, btod.o(CL$$btod_emuld))
-<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = _btod_emuld &rArr; _e2d &rArr; _e2e
+<P><STRONG><a name="[20a]"></a>_btod_emuld</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, btod.o(CL$$btod_emuld))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = _btod_emuld &rArr; _e2d &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__btod_mult_common
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_e2d
@@ -4227,7 +4227,7 @@ Global Symbols
 <LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
 
-<P><STRONG><a name="[221]"></a>__mathlib_tofloat</STRONG> (Thumb, 184 bytes, Stack size 24 bytes, narrow.o(i.__mathlib_tofloat))
+<P><STRONG><a name="[221]"></a>__mathlib_tofloat</STRONG> (Thumb, 132 bytes, Stack size 24 bytes, narrow.o(i.__mathlib_tofloat))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __mathlib_tofloat &rArr; __aeabi_cdcmpeq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmpeq
@@ -4253,7 +4253,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[14e]"></a>atof</STRONG> (Thumb, 42 bytes, Stack size 24 bytes, atof.o(i.atof))
-<BR><BR>[Stack]<UL><LI>Max Depth = 460<LI>Call Chain = atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtod_int
 <LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
@@ -4635,12 +4635,8 @@ Global Symbols
 <LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd1
 </UL>
 
-<P><STRONG><a name="[1]"></a>__ieee_status</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, istatus.o(x$fpl$ieeestatus))
-<BR><BR>[Called By]<UL><LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
-</UL>
-
 <P><STRONG><a name="[4a]"></a>_printf_fp_dec</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, printf1.o(x$fpl$printf1))
-<BR><BR>[Stack]<UL><LI>Max Depth = 324<LI>Call Chain = _printf_fp_dec &rArr; _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = _printf_fp_dec &rArr; _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
@@ -4666,7 +4662,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[202]"></a>_scanf_real</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, scanf1.o(x$fpl$scanf1))
-<BR><BR>[Stack]<UL><LI>Max Depth = 340<LI>Call Chain = _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
@@ -4733,7 +4729,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
 </UL>
 
-<P><STRONG><a name="[1af]"></a>NVIC_EnableIRQ</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, debug_frmwrk.o(.text))
+<P><STRONG><a name="[1af]"></a>NVIC_EnableIRQ</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, debug_frmwrk.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;debug_frmwrk_init
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart3_init
 </UL>
@@ -4769,8 +4765,8 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
 </UL>
 
-<P><STRONG><a name="[1f4]"></a>_fp_digits</STRONG> (Thumb, 432 bytes, Stack size 96 bytes, _printf_fp_dec.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 220<LI>Call Chain = _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<P><STRONG><a name="[1f4]"></a>_fp_digits</STRONG> (Thumb, 428 bytes, Stack size 96 bytes, _printf_fp_dec.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
 <LI><a href="#[1f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
@@ -4785,18 +4781,17 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_common.o(.text)
 </UL>
 <P><STRONG><a name="[201]"></a>_local_sscanf</STRONG> (Thumb, 60 bytes, Stack size 56 bytes, strtod.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 396<LI>Call Chain = _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_real
 </UL>
 <BR>[Called By]<UL><LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtod_int
 </UL>
 
-<P><STRONG><a name="[209]"></a>_fp_value</STRONG> (Thumb, 588 bytes, Stack size 96 bytes, scanf_fp.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 220<LI>Call Chain = _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
+<P><STRONG><a name="[209]"></a>_fp_value</STRONG> (Thumb, 508 bytes, Stack size 88 bytes, scanf_fp.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee_status
-<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emuld
+<BR>[Calls]<UL><LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emuld
 <LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_edivd
 <LI><a href="#[1f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 <LI><a href="#[1ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
