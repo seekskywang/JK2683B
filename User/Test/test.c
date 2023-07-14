@@ -815,15 +815,19 @@ void DataConvertSendToPC(void)
 //	}else{
 //		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
 //	}
-	for(i=0;i<5;i++)
-	{
-		if(SendPC_Testvalue.risistence[i] == 0x5e)//开路
+	
+		if(SendPC_Testvalue.risistence[0] == 0x5e)//开路
 		{
-			SendPC_Testvalue.risistence[i] = 0xd0;
-		}else if(SendPC_Testvalue.risistence[i] == 0x56 || Tft_5520_Dispvalue.comp == 0x94){//短路
-			SendPC_Testvalue.risistence[i] = 0xb0;
+			for(i=0;i<5;i++)
+			{
+				SendPC_Testvalue.risistence[i] = 0xd0;
+			}
+		}else if(SendPC_Testvalue.risistence[0] == 0x56 || Tft_5520_Dispvalue.comp == 0x94){//短路
+			for(i=0;i<5;i++)
+			{
+				SendPC_Testvalue.risistence[i] = 0xb0;
+			}
 		}
-	}
 	memcpy(&SendPC_Testvalue.time[0],(char *)Send_Testvalue[0].time,3);
 	SendPC_Testvalue.time[3] = Send_Testvalue[0].time[4];
 	SendPC_Testvalue.risistence[5] = 0x4d;//电阻单位固定为MΩ
