@@ -735,7 +735,7 @@ const uint8_t	Set_testitem_E[][9+1]=
 const uint8_t Sys_Sys[][2][20+1]=
 {
 	{{"仪器型号  JK2683B"},{"Model:  JK2683B"}},
-	{{"软件版本  Ver:1.02"},{"Sort Ver:1.02"}},//0  表示LPC更新  1STM32更新
+	{{"软件版本  Ver:1.03"},{"Sort Ver:1.03"}},//0  表示LPC更新  1STM32更新
 	{{"硬件版本  Ver:1.01"},{"Harn Ver:1.01"}},
 //	{"生产日期  "},
 //	{"仪器编号  "},

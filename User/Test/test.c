@@ -786,7 +786,13 @@ void DataConvertSendToPC(void)
 		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],4);
 		SendPC_Testvalue.risistence[4] = '0';
 	}else if(Tft_5520_Dispvalue.Range == 2){
-		memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
+		if(risitvalue< 100)
+		{
+			memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[2],4);
+			SendPC_Testvalue.risistence[4] = '0';
+		}else{
+			memcpy(&SendPC_Testvalue.risistence[0],(char *)&Send_Testvalue[0].dianzu[1],5);
+		}
 	}else if(Tft_5520_Dispvalue.Range == 3){
 		if(risitvalue < 1000)
 		{
